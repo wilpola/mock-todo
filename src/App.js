@@ -1,5 +1,8 @@
 // Imported packages
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// Import components
+import { Navigation } from "./components";
 
 // Import styles
 import "./App.scss";
@@ -21,15 +24,15 @@ function App() {
           status: "Not Started",
           date: "",
           dueDate: "",
-          notes: []
+          notes: [],
         },
         {
-          title: 'Get groceries',
-          status: 'Not started',
+          title: "Get groceries",
+          status: "Not started",
           date: new Date(),
-          dueDate: '',
-          notes: ''
-        }
+          dueDate: "",
+          notes: "",
+        },
       ];
       lS.setItem("wilp_todo", JSON.stringify(mockData));
     } else {
@@ -38,19 +41,21 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1> Todo App</h1>
-      <div id="todo-container">
-        {todos.map((item, key) => {
-          return (
-            <div className="todoItem" key={key}>
-              <input type={"checkbox"} className='checkbox'/>
-              <p>{item.title}</p>{" "}
-            </div>
-          );
-        })}
+    <Router>
+      <div className="App">
+        <Navigation />
+        <div id="todo-container">
+          {todos.map((item, key) => {
+            return (
+              <div className="todoItem" key={key}>
+                <input type={"checkbox"} className="checkbox" />
+                <p>{item.title}</p>{" "}
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
