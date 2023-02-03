@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Import components
-import { Navigation } from "./components";
+import { Navigation, SearchBar } from "./components";
 
 // Import styles
 import "./App.scss";
@@ -48,6 +48,7 @@ function App() {
     <Router>
       <div className="App">
         <Navigation />
+        <SearchBar />
         <div id="todo-container">
           <Routes>
             <Route path="/today" element={<TodayPage data={todos} />} />
