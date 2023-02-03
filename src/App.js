@@ -6,6 +6,8 @@ import { Navigation } from "./components";
 
 // Import styles
 import "./App.scss";
+import { TodayPage } from "./pages";
+import { uuid } from "uuidv4";
 
 // App component
 function App() {
@@ -20,16 +22,18 @@ function App() {
     if (!lS.getItem("wilp_todo")) {
       const mockData = [
         {
+          id: uuid(),
           title: "Clean your room",
           status: "Not Started",
-          date: "",
+          date: new Date().toLocaleDateString('en-US'),
           dueDate: "",
           notes: [],
         },
         {
+          id: uuid(),
           title: "Get groceries",
           status: "Not started",
-          date: new Date(),
+          date: new Date().toLocaleDateString('en-US'),
           dueDate: "",
           notes: "",
         },
@@ -45,6 +49,9 @@ function App() {
       <div className="App">
         <Navigation />
         <div id="todo-container">
+          <Routes>
+            <Route path="/today" element={<TodayPage data={todos} />} />
+          </Routes>
           {todos.map((item, key) => {
             return (
               <div className="todoItem" key={key}>
