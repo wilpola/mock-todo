@@ -16,7 +16,7 @@ const Navigation = () => {
                 <h3> Todo App</h3>
             </div>
             <div className="nav-links">
-                <Link end to={'/today'}>Today</Link>
+                <Link end to={'/'}>Today</Link>
                 <Link end to={'/completed'}>Completed</Link>
             </div>
         </nav>
