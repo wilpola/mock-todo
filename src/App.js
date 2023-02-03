@@ -6,8 +6,8 @@ import { Navigation } from "./components";
 
 // Import styles
 import "./App.scss";
-import { TodayPage } from "./pages";
-import { uuid } from "uuidv4";
+import { CompletedPage, TodayPage } from "./pages";
+import { v4 as uuidv4 } from 'uuid';
 
 // App component
 function App() {
@@ -22,17 +22,17 @@ function App() {
     if (!lS.getItem("wilp_todo")) {
       const mockData = [
         {
-          id: uuid(),
+          id: uuidv4(),
           title: "Clean your room",
           status: "Not Started",
           date: new Date().toLocaleDateString('en-US'),
-          dueDate: "",
+          dueDate: "2/3/2023",
           notes: [],
         },
         {
-          id: uuid(),
+          id: uuidv4(),
           title: "Get groceries",
-          status: "Not started",
+          status: "completed",
           date: new Date().toLocaleDateString('en-US'),
           dueDate: "",
           notes: "",
@@ -51,15 +51,16 @@ function App() {
         <div id="todo-container">
           <Routes>
             <Route path="/today" element={<TodayPage data={todos} />} />
+            <Route path="/completed" element={<CompletedPage data={todos} />} />
           </Routes>
-          {todos.map((item, key) => {
+          {/* {todos.map((item, key) => {
             return (
               <div className="todoItem" key={key}>
                 <input type={"checkbox"} className="checkbox" />
                 <p>{item.title}</p>{" "}
               </div>
             );
-          })}
+          })} */}
         </div>
       </div>
     </Router>

@@ -7,23 +7,22 @@
 
 // TodayPage component
 const TodayPage = (params) => {
+  // all Rendered content
 
-
-    // all Rendered content
-    return (
-        <div className='today-container'>
-            {params.data.map((item, key) => {
-                if (item.dueDate === new Date().toLocaleDateString('us-en')) {
-                    return (
-                        <div className="todoItem">
-                            <p>{item.title}</p>
-                        </div>
-                    )
-                }
-            })}
-        </div>
-    )
-}
+  return (
+    <div className="today-container">
+      {params.data
+        .filter(
+          (data) => data.dueDate === new Date().toLocaleDateString("us-en")
+        )
+        .map((item, key) => (
+          <div key={key} className="todoItem">
+            {item.title}
+          </div>
+        ))}
+    </div>
+  );
+};
 
 // Export page
 export default TodayPage;
