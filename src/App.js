@@ -26,7 +26,7 @@ function App() {
           title: "Clean your room",
           status: "Not Started",
           date: new Date().toLocaleDateString("en-US"),
-          dueDate: "2/3/2023",
+          dueDate: new Date().toLocaleDateString("en-US"),
           notes: [],
         },
         {
