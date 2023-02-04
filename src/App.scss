@@ -9,12 +9,19 @@
   grid-template-rows: 70px 1fr 1fr 1fr;
   grid-template-areas:
     "nav search"
+<<<<<<< HEAD
     "nav todo "
     "nav todo "
     "nav todo ";
+=======
+    "nav main "
+    "nav main "
+    "nav main ";
+>>>>>>> df1247f (4 settings page (#5))
 
   .todo-container {
-    grid-area: todo;
+    // grid-area: main;
+    grid-row: 2 / 5;
   }
 
   .search-container {
@@ -56,5 +63,18 @@
     p {
       padding-left: 12px;
     }
+  }
+}
+
+.App.dark {
+  background-color: #333;
+  color: white;
+  
+  .settings-area {
+    background-color:rgb(86, 86, 86);
+  }
+  
+  .todoItem {
+    background-color:rgb(86, 86, 86);
   }
 }
