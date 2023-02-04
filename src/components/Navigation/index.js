@@ -18,6 +18,7 @@ const Navigation = () => {
             <div className="nav-links">
                 <Link end to={'/today'}>Today</Link>
                 <Link end to={'/completed'}>Completed</Link>
+                <Link end to={'/settings'}>Settings</Link>
             </div>
         </nav>
     )
