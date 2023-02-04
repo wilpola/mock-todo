@@ -9,13 +9,30 @@ import "./settings.scss";
 // Settings component
 const Settings = (params) => {
   // Functions
-  const handleReset = () => {
-    const mockData = params.mockData;
-    const lS = window.localStorage;
+  const mockData = params.mockData;
+  const lS = window.localStorage;
 
+  const handleReset = () => {
     lS.setItem("wilp_todo", JSON.stringify(mockData));
   };
 
+  // Handle light theme
+  const handleLight = () => {
+    if (!lS.getItem("wilp_theme")) {
+      lS.setItem("wilp_theme", "light");
+    }
+    lS.setItem("wilp_theme", "light");
+    params.setTheme("light");
+  };
+
+  // Handle dark theme
+  const handleDark = () => {
+    if (!lS.getItem("wilp_theme")) {
+      lS.setItem("wilp_theme", "dark");
+    }
+    lS.setItem("wilp_theme", "dark");
+    params.setTheme("dark");
+  };
   // All rendered content
   return (
     <div className="settings-container">
@@ -27,10 +44,10 @@ const Settings = (params) => {
           You may choose between light and dark themes, and the theme will
           change instantly when you select the other theme.
         </p>
-        <button className="light" onClick={() => params.setTheme("light")}>
+        <button className="light" onClick={handleLight}>
           Set theme light
         </button>
-        <button className="dark" onClick={() => params.setTheme("dark")}>
+        <button className="dark" onClick={handleDark}>
           Set theme dark
         </button>
       </div>

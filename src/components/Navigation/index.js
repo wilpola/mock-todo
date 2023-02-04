@@ -2,7 +2,6 @@
 // This file contains the navigaiton component
 
 // imported packages
-import { useState, useEffect} from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import './navigation.scss';
 

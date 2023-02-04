@@ -44,6 +44,11 @@ function App() {
     } else {
       setTodos(JSON.parse(lS.getItem("wilp_todo")));
     }
+
+    if (!lS.getItem("wilp_theme")) {
+      lS.setItem("wilp_theme", "light");
+    } 
+    setTheme("light");
   }, []);
 
   return (
