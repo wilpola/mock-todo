@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Import components
-import { Navigation, SearchBar } from "./components";
+import { Navigation } from "./components";
 
 // Import styles
 import "./App.scss";
-import { CompletedPage, TodayPage } from "./pages";
+import { CompletedPage, TodayPage, Settings } from "./pages";
 import { v4 as uuidv4 } from "uuid";
 
 // App component
