@@ -48,7 +48,6 @@ function App() {
     <Router>
       <div className="App">
         <Navigation />
-        <SearchBar />
         <div id="todo-container">
           <Routes>
             <Route path="/" element={<TodayPage data={todos} />} />
