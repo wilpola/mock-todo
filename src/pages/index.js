@@ -4,6 +4,7 @@
 // Import pages
 import TodayPage from "./Today";
 import CompletedPage from "./Completed";
+import Dashboard from "./Dashboard";
 
 //export pages
-export { TodayPage, CompletedPage };
+export { Dashboard, TodayPage, CompletedPage };
