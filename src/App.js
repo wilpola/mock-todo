@@ -47,8 +47,10 @@ function App() {
 
     if (!lS.getItem("wilp_theme")) {
       lS.setItem("wilp_theme", "light");
-    } 
-    setTheme("light");
+      setTheme("light");
+    } else {
+      setTheme(lS.getItem('wilp_theme'))
+    }
   }, []);
 
   return (
