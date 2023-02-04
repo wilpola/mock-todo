@@ -4,6 +4,7 @@
 // Import pages
 import TodayPage from "./Today";
 import CompletedPage from "./Completed";
+import Settings from "./Settings";
 
 //export pages
-export { TodayPage, CompletedPage };
+export { TodayPage, CompletedPage, Settings };

@@ -2,7 +2,6 @@
 // This file contains the navigaiton component
 
 // imported packages
-import { useState, useEffect} from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import './navigation.scss';
 
@@ -18,6 +17,7 @@ const Navigation = () => {
             <div className="nav-links">
                 <Link end to={'/today'}>Today</Link>
                 <Link end to={'/completed'}>Completed</Link>
+                <Link end to={'/settings'}>Settings</Link>
             </div>
         </nav>
     )

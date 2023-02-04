@@ -8,13 +8,14 @@
   grid-template-columns: 300px 1fr;
   grid-template-rows: 70px 1fr 1fr 1fr;
   grid-template-areas:
-    "nav ."
-    "nav todo "
-    "nav todo "
-    "nav todo ";
+    "nav search"
+    "nav main "
+    "nav main "
+    "nav main ";
 
   .todo-container {
-    grid-area: todo;
+    // grid-area: main;
+    grid-row: 2 / 5;
   }
 
   .todoItem {
@@ -39,5 +40,18 @@
     p {
       padding-left: 12px;
     }
+  }
+}
+
+.App.dark {
+  background-color: #333;
+  color: white;
+  
+  .settings-area {
+    background-color:rgb(86, 86, 86);
+  }
+  
+  .todoItem {
+    background-color:rgb(86, 86, 86);
   }
 }
